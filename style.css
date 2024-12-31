@@ -8,4 +8,34 @@
 
 :root {
 	font-family: "LeagueSpartan";
+	--darkGray: hsl(0, 0%, 63%);
+	--black: hsl(0, 0%, 0%);
+	--white: hsl(0, 0%, 100%);
+	--veryDarkGray: hsl(0, 0%, 27%);
+}
+
+body {
+	margin: 0;
+}
+
+.hero {
+	height: auto;
+	width: 60%;
+	object-fit: cover;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.topBox {
+	height: 70%;
+	width: 100%;
+	display: flex;
+}
+.bottomBox {
+	height: 30%;
+	width: 100%;
 }

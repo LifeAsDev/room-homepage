@@ -1,31 +1,37 @@
 module Main exposing (main)
 
 import Browser
-import HelloWorld exposing (helloWorld)
-import Html exposing (Html, div, img)
-import Html.Attributes exposing (src, style)
-import Msg exposing (Msg(..))
+import Html exposing (Html, div, img, main_)
+import Html.Attributes exposing (class, src, style)
 import VitePluginHelper
 
 
-main : Program () Int Msg
+type Msg
+    = NoOp
+
+
+main : Program () Model Msg
 main =
-    Browser.sandbox { init = 0, update = update, view = view }
+    Browser.sandbox { init = init, update = update, view = view }
 
 
-update : Msg -> number -> number
+type alias Model =
+    { nada : Int }
+
+
+init : Model
+init =
+    { nada = 0 }
+
+
+update : Msg -> Model -> Model
 update msg model =
-    case msg of
-        Increment ->
-            model + 1
-
-        Decrement ->
-            model - 1
+    model
 
 
-view : Int -> Html Msg
+view : Model -> Html Msg
 view model =
-    div []
-        [ img [ src <| VitePluginHelper.asset "/src/assets/logo.png", style "width" "300px" ] []
-        , helloWorld model
+    main_ []
+        [ div [ class "topBox" ] [ img [ class "hero", src <| VitePluginHelper.asset "/src/assets/images/desktop-image-hero-1.jpg" ] [], div [] [] ]
+        , div [ class "bottomBox" ] []
         ]
