@@ -39,3 +39,44 @@ main {
 	height: 30%;
 	width: 100%;
 }
+
+.headerNavLink {
+	position: absolute;
+	left: 3em;
+	top: 3em;
+	display: flex;
+	gap: 2.5em;
+}
+
+.logo {
+	cursor: pointer;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5em;
+	color: white;
+}
+
+.navLink {
+	cursor: pointer;
+	position: relative;
+	color: white;
+	text-decoration: none;
+}
+
+.navLink::after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	background: white;
+	transition: width 0.1s;
+	margin: auto;
+	margin-top: 0.1em;
+}
+
+.navLink:hover::after {
+	width: 100%;
+}
